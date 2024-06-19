@@ -126,7 +126,7 @@ body{
 .home.next .home-timer,
 .home.prev .home-timer{
     width: 100%;
-    animation: timerRunning 2s linear 1 forwards;
+    animation: timerRunning 1s linear 1 forwards;
 }
 @keyframes timerRunning {
     to{
