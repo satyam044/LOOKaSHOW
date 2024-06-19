@@ -9,3 +9,127 @@ body{
     color: #fff;
     font-family: "Palanquin", sans-serif;
 }
+.home-item:nth-child(1) h2,
+.home-item:nth-child(1) h3,
+.home-item:nth-child(1) .heading-btn{
+    transform: translateY(30px);
+    filter: blur(10px);
+    opacity: 0;
+    animation: showContent 0.5s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+.home-item:nth-child(1) h2{
+    animation-delay: 1s;
+}
+.home-item:nth-child(1) h3{
+    animation-delay: 1.2s;
+}
+.home-item:nth-child(1) .heading-btn{
+    animation-delay: 1.3s;
+}
+
+/* Effect Next */
+.home.next .home-list .home-item:nth-child(1) img{
+    width: 150px;
+    height: 180px;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    border-radius: 20px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage {
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+.home.next .home-thumbnail .home-t-item:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+@keyframes showThumbnail {
+    to{
+        width: 150px;
+    }
+}
+.home.next .home-thumbnail{
+    transform: translateX(150px);
+    animation:transformThumbnail .5s linear 1 forwards;
+}
+@keyframes transformThumbnail {
+    to{
+        transform: translateX(0);
+    }
+}
+
+/* Effect prev */
+.home.prev .home-list .home-item:nth-child(2){
+    z-index: 50;
+}
+.home.prev .home-list .home-item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage 0.5s linear 1 forwards;
+}
+@keyframes outImage {
+    to{
+        width: 150px;
+        height: 180px;
+        border-radius: 20px;
+        left: 50%;
+        bottom: 40px;
+    }
+}
+.home.prev .home-thumbnail .home-t-items:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+.home.prev .home-list .home-item:nth-child(2) h2,
+.home.prev .home-list .home-item:nth-child(2) h3,
+.home.prev .home-list .home-item:nth-child(2) .heading-btn{
+    animation: contentOut 1.5s linear 1 forwards;
+}
+@keyframes contentOut {
+    to{
+        transform: translateY(-80px);
+        filter: blur(10px);
+        opacity: 0;
+    }
+}
+.home.next .home-btn button{
+    pointer-events: none;
+}
+.home-timer{
+    width: 0%;
+    height: 2px;
+    background-color: rgb(253 224 71 );
+    position: absolute;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+}
+.home.next .home-timer,
+.home.prev .home-timer{
+    width: 100%;
+    animation: timerRunning 2s linear 1 forwards;
+}
+@keyframes timerRunning {
+    to{
+        width: 0;
+    }
+}
